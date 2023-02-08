@@ -137,34 +137,34 @@
         <div class="offcanvas-body">
             <h5>Kanal sayısı</h5>
             <div class="btn-group w-100" role="group" aria-label="Ayarlar">
-                <a type="button" class="btn btn-outline-light rounded-0<? echo ($channel == 9) ? ' active' : ''; ?>" href=".">9 kanal</a>
-                <a type="button" class="btn btn-outline-light rounded-0<? echo ($channel == 16) ? ' active' : ''; ?>" href="?channel=16">16 kanal</a>
+                <a type="button" class="btn btn-outline-light rounded-0<?php echo ($channel == 9) ? ' active' : ''; ?>" href=".">9 kanal</a>
+                <a type="button" class="btn btn-outline-light rounded-0<?php echo ($channel == 16) ? ' active' : ''; ?>" href="?channel=16">16 kanal</a>
             </div>
 
             <form methot="get" action="">
                 <h5 class="mt-4">Başlangıç seçenekleri</h5>
                 <div class="form-check form-switch">
-                    <? echo ($autoplay == 1) ? '<input type="hidden" value="off" name="autoplay">' : ''; ?>
-                    <input class="form-check-input" type="checkbox" role="switch" id="autoplay" name="autoplay"<? echo ($autoplay == 1) ? ' checked="checked"' : ''; ?>>
+                    <?php echo ($autoplay == 1) ? '<input type="hidden" value="off" name="autoplay">' : ''; ?>
+                    <input class="form-check-input" type="checkbox" role="switch" id="autoplay" name="autoplay"<?php echo ($autoplay == 1) ? ' checked="checked"' : ''; ?>>
                     <label class="form-check-label" for="autoplay">Otomatik oynatma</label>
                 </div>
 
                 <h5 class="mt-4">Kanalları değiştir</h5>
                 <span class="form-text">Kanal adresi bölümüne YouTube yayın adresi uzantısını girmelisiniz.</span>
 
-                <input type="hidden" aria-label="Kanal" placeholder="Kanal" name="channel" value="<? echo $channel; ?>" class="form-control rounded-0">
+                <input type="hidden" aria-label="Kanal" placeholder="Kanal" name="channel" value="<?php echo $channel; ?>" class="form-control rounded-0">
                 <div id="sortable">
 <?php
     foreach ($chanels as $cn => $cs) {
 ?>
                     <div class="input-group mt-1">
-                        <input type="text" aria-label="Kanal adı" placeholder="Kanal adı" name="cn[]" value="<? echo $cn; ?>" class="form-control rounded-0">
+                        <input type="text" aria-label="Kanal adı" placeholder="Kanal adı" name="cn[]" value="<?php echo $cn; ?>" class="form-control rounded-0">
                         <span class="input-group-text">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"/>
                             </svg>
                         </span>
-                        <input type="text" aria-label="Kanal adresi" placeholder="Kanal adresi" name="cs[]" value="<? echo $cs; ?>" class="form-control rounded-0">
+                        <input type="text" aria-label="Kanal adresi" placeholder="Kanal adresi" name="cs[]" value="<?php echo $cs; ?>" class="form-control rounded-0">
                     </div>
 <?php
     }
